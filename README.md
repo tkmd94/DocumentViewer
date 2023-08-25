@@ -23,22 +23,22 @@
 
 # Installation
 1. 接続するARIAサーバーのホスト名を設定する。
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L7
+   https://github.com/tkmd94/DocumentViewer/blob/613eb0154c834ec9cb37f23213eb3927c8caff0f/DocumentViewer/App.config#L7
 2. 接続するARIAサーバーのポート番号を設定する。
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L8
-4. APIキーを設定する。
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L9
-5. ローカル保存先を設定する。
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L10
-6. Eclipseの下記のDLLをプロジェクトフォルダにコピーします。
+   https://github.com/tkmd94/DocumentViewer/blob/613eb0154c834ec9cb37f23213eb3927c8caff0f/DocumentViewer/App.config#L8
+3. APIキーを設定する。
+   https://github.com/tkmd94/DocumentViewer/blob/613eb0154c834ec9cb37f23213eb3927c8caff0f/DocumentViewer/App.config#L9
+4. ローカル保存先を設定する。
+   https://github.com/tkmd94/DocumentViewer/blob/613eb0154c834ec9cb37f23213eb3927c8caff0f/DocumentViewer/App.config#L10
+5. Eclipseの下記のDLLをプロジェクトフォルダにコピーします。
    >C:\Program Files (x86)\Varian\OCS\XX.X\VMS.OIS.ARIALocal.WebServices.Document.Contracts.dll  
    >XX.Xはバージョン番号
-7. Eclipseの下記のDLLをプロジェクトフォルダにコピーします。
+6. Eclipseの下記のDLLをプロジェクトフォルダにコピーします。
    >C:\Program Files (x86)\Varian\OCS\XX.X\VMS.SF.Gateway.Contracts.dll  
    >XX.Xはバージョン番号
-8. このプロジェクトをリリースビルドして、EXEファイル **DocumentViewer.exe** を生成します。
-9. クライアント環境にReleaseフォルダごとコピーします。
-10. クライアント環境にWebView2 Runtimeをインストールします。ただし、Microsoft　Edge（Chromium）がインストールされている場合は、runtimeのインストールは不要となります。
+7. このプロジェクトをリリースビルドして、EXEファイル **DocumentViewer.exe** を生成します。
+8. クライアント環境にReleaseフォルダごとコピーします。
+9. クライアント環境にWebView2 Runtimeをインストールします。ただし、Microsoft　Edge（Chromium）がインストールされている場合は、runtimeのインストールは不要となります。
 
 # Usage
 
