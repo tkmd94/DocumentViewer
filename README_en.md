@@ -23,22 +23,22 @@
 
 # Installation
 1. Set the hostname of the ARIA server you want to connect to. 
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L7
-2. Set the port number of the ARIA server you want to connect to.
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L8
-4. Configure the API key. 
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L9
-5. Set the local save destination. 
-   https://github.com/tkmd94/DocumentViewer/blob/1fca929c98a946531d709a9d1c5808f8531b4623/DocumentViewer/App.config#L10
-6. Copy the following DLL from Eclipse to the project folder:
+   https://github.com/tkmd94/DocumentViewer/blob/593dea2c146a5eb50a5966442d393c2790157f40/DocumentViewer/App.config#L7
+2. Set the port number of the ARIA server you want to connect to. 
+   https://github.com/tkmd94/DocumentViewer/blob/593dea2c146a5eb50a5966442d393c2790157f40/DocumentViewer/App.config#L8
+3. Configure the API key.  
+   https://github.com/tkmd94/DocumentViewer/blob/593dea2c146a5eb50a5966442d393c2790157f40/DocumentViewer/App.config#L9
+4. Set the local save destination.  
+   https://github.com/tkmd94/DocumentViewer/blob/593dea2c146a5eb50a5966442d393c2790157f40/DocumentViewer/App.config#L10
+5. Copy the following DLL from Eclipse to the project folder:
    >C:\Program Files (x86)\Varian\OCS\XX.X\VMS.OIS.ARIALocal.WebServices.Document.Contracts.dll  
    >XX.X represents the version number.
-7. Copy the following DLL from Eclipse to the project folder:
+6. Copy the following DLL from Eclipse to the project folder:
    >C:\Program Files (x86)\Varian\OCS\XX.X\VMS.SF.Gateway.Contracts.dll  
    >XX.X represents the version number.
-8. Release build this project to generate the EXE file **DocumentViewer.exe**.
-9. Copy the entire Release folder to the client environment.
-10. Install WebView2 Runtime on the client environment. However, if Microsoft Edge (Chromium) is installed, there's no need to install the Runtime.
+7. Release build this project to generate the EXE file **DocumentViewer.exe**.
+8. Copy the entire Release folder to the client environment.
+9. Install WebView2 Runtime on the client environment. However, if Microsoft Edge (Chromium) is installed, there's no need to install the Runtime.
     
 # Usage
 
