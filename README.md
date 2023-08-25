@@ -38,7 +38,7 @@
    >XX.Xはバージョン番号
 8. このプロジェクトをリリースビルドして、EXEファイル **DocumentViewer.exe** を生成します。
 9. クライアント環境にReleaseフォルダごとコピーします。
-10. クライアント環境にWebView2 Runtimeをインストールします。ただし、Microsoft　Edge（Chromium）がインストールされている場合は、Runtimeのインストールは不要となります。
+10. クライアント環境にWebView2 Runtimeをインストールします。ただし、Microsoft　Edge（Chromium）がインストールされている場合は、runtimeのインストールは不要となります。
 
 # Usage
 
