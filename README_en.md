@@ -38,7 +38,7 @@
    >XX.X represents the version number.
 7. Release build this project to generate the EXE file **DocumentViewer.exe**.
 8. Copy the entire Release folder to the client environment.
-9. Install WebView2 Runtime on the client environment. However, if Microsoft Edge (Chromium) is installed, there's no need to install the Runtime.
+9. Install WebView2 Runtime on the client environment. However, if Microsoft Edge (Chromium) is installed, there's no need to install the runtime.
     
 # Usage
 
