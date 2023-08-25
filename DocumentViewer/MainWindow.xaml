@@ -1,0 +1,114 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:DocumentViewer"
+        xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="DocumentViewer.MainWindow"
+        mc:Ignorable="d"
+        Title="DocumentViewer for ARIA" Height="750" Width="1250"  
+        x:Name="mainWindow"
+        Closed="Window_Closed" SizeChanged="Window_SizeChanged">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="445*"/>
+            <ColumnDefinition Width="176*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55" />
+            <RowDefinition Height="55" />
+            <RowDefinition Height="*" MinHeight="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2">
+            <Button x:Name="LoadButton" Content="{Binding LoadButtonLabel, Source={StaticResource resources}}" Click="LoadButton_Click" FontSize="18" FontWeight="Bold" Padding="20,5,20,5" Margin="5" />
+            <Label x:Name="PatientIdLabel" Content="{Binding PatientIdLabel, Source={StaticResource resources}}" FontSize="18" FontWeight="Bold" Padding="5" Margin="5" />
+            <TextBox x:Name="PatientIdTextBox" Text="0123456789" KeyDown="PatientIdTextBox_KeyDown" FontSize="18" FontWeight="Bold" Padding="5" Margin="5" Width="150"/>
+            <Label x:Name="PatientNameLabel" Content="{Binding PatientNameLabel, Source={StaticResource resources}}" FontSize="18" FontWeight="Bold" Padding="5" Margin="5" />
+            <TextBlock x:Name="PatientNameTextBlock" Text="Patient Name" FontSize="18" FontWeight="Bold" Padding="5" Margin="5" />
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5" Grid.ColumnSpan="2">
+            <Button x:Name="ExportButton" Content="{Binding ExportButtonLabel, Source={StaticResource resources}}" Click="ExportButton_Click" FontSize="18" FontWeight="Bold" Padding="20,5,20,5" Margin="5" />
+            <Button x:Name="OpenTempButton" Content="{Binding OpenTempButtonLabel, Source={StaticResource resources}}" Click="OpenTempButton_Click" FontSize="18" FontWeight="Bold" Padding="20,5,20,5" Margin="5" />
+        </StackPanel>
+        <Grid Grid.Row="2" x:Name="ViewGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="760"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="LayoutRoot" Background="White">
+                <DataGrid Grid.Column="0" Margin="10,10,5,10" x:Name="documentDataGrid"
+                      AutoGenerateColumns="False" 
+                      CanUserSortColumns="False"
+                      CanUserAddRows="False" 
+                      CanUserDeleteRows="False" 
+                      SelectionMode="Single"
+                      IsReadOnly="True" FontSize="12"               
+                      MouseDoubleClick="documentDataGrid_MouseDoubleClick" 
+                      SelectionChanged="DocumentDataGrid_SelectionChanged">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Padding" Value="15 5 15 5"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Date}" Header="{Binding DataGridHeaderDate, Source={StaticResource resources}}" Width="Auto">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Padding" Value="20 5 20 5"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding DocumentType}"  Header="{Binding DataGridHeaderDocumentType, Source={StaticResource resources}}" Width="Auto">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Padding" Value="20 5 20 5"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding TemplateName}"  Header="{Binding DataGridHeaderTemplateName, Source={StaticResource resources}}" Width="Auto" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Padding" Value="20 5 20 5"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Format}"  Header="{Binding DataGridHeaderFormat, Source={StaticResource resources}}" Width="Auto" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Padding" Value="20 5 20 5"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding AuthoredBy}"  Header="{Binding DataGridHeaderAuthoredBy, Source={StaticResource resources}}" Width="Auto" >
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Padding" Value="20 5 20 5"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                    <!--<DataGrid.Resources>
+                        <ContextMenu x:Key="DataGridContextMenu">
+                            <MenuItem Header="{Binding ContextDeleteLabel, Source={StaticResource resources}}"
+                                      Click="documentDataGrid_ContextDeleteButton"/>
+                        </ContextMenu>
+                        <Style TargetType="{x:Type DataGridRow}">
+                            <EventSetter Event="MouseRightButtonUp"
+                                         Handler="documentDataGridRow_MouseRightButtonUp"/>
+                        </Style>
+                    </DataGrid.Resources>-->
+                </DataGrid>
+                <Controls:ProgressRing IsActive="false" x:Name="ProgressRing"/>
+            </Grid>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Center" DragCompleted="GridSplitter_DragCompleted" />
+            <Wpf:WebView2 Grid.Column="2" x:Name="WebView" 
+                          Margin="10,10,5,10"
+                          Height="590" 
+                          HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</Window>

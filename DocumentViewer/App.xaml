@@ -1,0 +1,10 @@
+﻿<Application x:Class="DocumentViewer.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DocumentViewer"
+             xmlns:properties="clr-namespace:DocumentViewer.Properties"
+             Startup="ApplicationStartup">
+    <Application.Resources>
+        <properties:Resources x:Key="resources"/>
+    </Application.Resources>
+</Application>
